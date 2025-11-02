@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Kalkulator Zakat</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <header>
+          <h1>🕌 Kalkulator Zakat</h1>
+          <p>Hitung zakat Anda secara logis dan sesuai syariat Islam</p>
+     </header>
+
+     <div class="container">
+          <div id="menu">
+               <h2>Pilih Jenis Zakat</h2>
+               <div class="grid">
+                    <div class="card" onclick="showSection('fitrah')">
+                         <h3>🍚 Zakat Fitrah</h3>
+                         <p>Zakat wajib setiap jiwa menjelang Idul Fitri.</p>
+                    </div>
+                    <div class="card" onclick="showSection('mal')">
+                         <h3>💰 Zakat Mal</h3>
+                         <p>Zakat atas harta seperti emas, perak, hasil panen, dan penghasilan.</p>
+                    </div>
+               </div>
+          </div>
+
+          <!-- ZAKAT FITRAH -->
+          <div id="fitrah" class="hidden fade">
+               <h2>🍚 Kalkulator Zakat Fitrah</h2>
+               <p>Zakat fitrah wajib dibayarkan per jiwa. Asumsi harga 2.5 kg beras layak adalah Rp 50.000.</p>
+               <label>Nama Muzakki (Orang Pemberi Zakat):</label>
+               <input type="text" id="muzakkiFitrah" placeholder="Masukkan nama Anda">
+
+               <label>Jumlah Jiwa:</label>
+               <input type="number" id="jiwa" placeholder="Contoh: 4">
+
+               <button onclick="hitungFitrah()">Hitung Zakat Fitrah</button>
+               <div id="hasilFitrah" class="result"></div>
+               <button onclick="backToMenu()">⬅️ Kembali</button>
+          </div>
+
+          <!-- ZAKAT MAL -->
+          <div id="mal" class="hidden fade">
+               <h2>💰 Kalkulator Zakat Mal</h2>
+               <div class="hukum-logika">
+                    <h2 class="centerh2">Hukum Logika dalam Keputusan Zakat</h2>
+                    <p>Hukum logika pada perhitungan zakatdibawah ini yaitu menggunakan hukum <b>Implikasi dan
+                              Konjungsi</b>
+                         (AND). Contoh: <br>
+                         <b>PREMIS 1:</b> eorang muzakki memiliki total harta (totalHarta) yang dihitung dari emas,
+                         perak, uang, dan hasil panen.<br>
+                         <b>PREMIS 2 (Kondisi):</b> JIKA (totalHarta >= 197285000) DAN (syarat haul telah terpenuhi),
+                         MAKA program memberikan status "Wajib Zakat" dan menghitung zakat = totalHarta * 0.025. <br>
+                         JIKA TIDAK, MAKA hasilnya "Tidak Wajib Zakat Tapi Bisa Berinfaq".
+                    </p>
+               </div>
+               <label>
+                    <h3>Nama Muzakki(Orang Pemberi Zakat) :</h3>
+               </label>
+               <input type="text" id="muzakkiMal" placeholder="Masukkan nama Anda">
+               <h3>Pilih jenis harta Anda di bawah ini:</h3>
+               <br>
+               <div id="pilihanHarta" class="pilihan-harta">
+                    <label><b>Emas</b><input type="checkbox" value="emas"
+                              onchange="toggleInput('emasInput', this)"></label>
+                    <label><b>Perak</b><input type="checkbox" value="perak"
+                              onchange="toggleInput('perakInput', this)"></label>
+                    <label><b>Pertanian</b><input type="checkbox" value="panen"
+                              onchange="toggleInput('panenInput', this)"></label>
+                    <label><b>Uang, Tabungan, Penghasilan</b><input type="checkbox" value="uang"
+                              onchange="toggleInput('uangInput', this)"></label>
+                    <label><b>Rikaz & Tambang</b><input type="checkbox" value="rikaz"
+                              onchange="toggleInput('rikazInput', this)"></label>
+               </div>
+
+
+               <div id="emasInput" class="hidden fade">
+                    <label>Jumlah Emas (gram): (nisab: 85gram)</label>
+                    <input type="number" id="emas" placeholder="Contoh: 100">
+                    <label>Lama Kepemilikan (tahun):</label>
+                    <input type="number" id="haul" placeholder="Contoh: 1">
+               </div>
+
+               <div id="perakInput" class="hidden fade">
+                    <label>Jumlah Perak (gram): (nisab: 595gram)</label>
+                    <input type="number" id="perak" placeholder="Contoh: 600">
+                    <label>Lama Kepemilikan (tahun):</label>
+                    <input type="number" id="haul" placeholder="Contoh: 1">
+               </div>
+
+               <div id="panenInput" class="hidden fade">
+                    <label>Hasil Panen (kg):</label>
+                    <input type="number" id="panen" placeholder="Contoh: 700">
+                    <select id="irigasi">
+                         <option value="berbayar">Irigasi Berbayar (Zakat 5%)</option>
+                         <option value="alami">Irigasi Alami (Zakat 10%)</option>
+                    </select>
+                    <label>Lama Kepemilikan (tahun):</label>
+                    <input type="number" id="haul" placeholder="Contoh: 1">
+               </div>
+
+               <div id="uangInput" class="hidden fade">
+                    <label>Jumlah Uang, Tabungan, Penghasilan (Rp): Total nilai dari semua harta ini. Nisabnya setara 85
+                         gram emas (Rp 197.285.000).</label>
+                    <input type="number" id="uang" placeholder="Contoh: 500000000">
+                    <label>Lama Kepemilikan (tahun):</label>
+                    <input type="number" id="haul" placeholder="Contoh: 1">
+               </div>
+               <!-- RIKAZ & TAMBANG -->
+               <div id="rikazInput" class="hidden fade">
+                    <label>Nilai Harta (Rupiah): (Zakat Rikaz 20%, Tambang 2.5% jika > nisab)</label>
+                    <input type="number" id="nilaiRikaz" placeholder="Contoh: 250000000">
+                    <label>Jenis Harta:</label>
+                    <select id="jenisRikaz">
+                         <option value="rikaz">Rikaz (Harta Temuan, Zakat 20%)</option>
+                         <option value="tambang">Hasil Tambang (Zakat 2.5%, Nisab Rp 197.285.000)</option>
+                    </select>
+               </div>
+
+               <button onclick="hitungMal()">Hitung Zakat Mal</button>
+               <div id="hasilMal" class="result"></div>
+               <button onclick="backToMenu()">⬅️ Kembali</button>
+          </div>
+
+          <!-- Dalil -->
+          <div class="dalil">
+               “Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan mensucikan mereka.”
+               <br><b>(QS. At-Taubah: 103)</b>
+          </div>
+     </div>
+
+     <footer>
+          <div class="container-footer">
+               <div class="kolom-1">
+                    <h3>UTS - LOGIKA MATEMATIKA <span>(KALKULATOR ZAKAT)</span></h3>
+                    <p>Aplikasi sederhana untuk menghitung zakat fitrah dan zakat mal secara otomatis berdasarkan
+                         ketentuan syariah.</p>
+               </div>
+               <div class="kolom-2">
+                    <h4>📚 Informasi Mahasiswa</h4>
+                    <ul>
+                         <li><b>Nama:</b> Muhammad Galang Rusdiansyah</li>
+                         <li><b>NIM:</b> 256512006</li>
+                         <li><b>Program Studi:</b> Teknik Informatika</li>
+                         <li><b>Semester:</b> 1</li>
+                         <li><b>Mata Kuliah:</b> Logika Matematika</li>
+                         <li><b>Dosen:</b> Iin Solihin, M.Kom</li>
+                         <li><b>Kampus:</b> Masoem University</li>
+                    </ul>
+               </div>
+               <div class="kolom-3">
+                    <h4>📩 Kontak</h4>
+                    <p>Jika ada masukan atau saran terkait aplikasi ini:</p>
+                    <a href="mailto:galangsyah2006@gmail.com" style="color:#ffd700;">galangsyah2006@gmail.com</a>
+               </div>
+          </div>
+          <hr class="line">
+          <p style="text-align: center; font-size: 13px; color: #888;">© 2025 Masoem University. All Rights Reserved.
+          </p>
+     </footer>
+
+     <script src="style.js"></script>
+</body>
+
+</html>
