@@ -1,15 +1,15 @@
-# Kalkulator Zakat — UTS Logika Matematika
+# Kalkulator Zakat — UTS Logika Matematika Maso'em University🏫
 
-**Kata Pengantar**
+**Kata Pengantar🗒️**
 
-Assalamu’alaikum — Selamat datang di *Kalkulator Zakat* hasil pengembangan untuk tugas UTS Mata Kuliah **Logika Matematika**.  
+Assalamu’alaikum, Selamat datang di *Kalkulator Zakat* hasil pengembangan untuk tugas UTS Mata Kuliah **Logika Matematika**.  
 Aplikasi web sederhana ini dibuat dengan tujuan membantu perhitungan zakat secara cepat dan memberikan gambaran penerapan operasi logika dasar (AND, OR, NOT) dalam pengambilan keputusan—mis. menentukan wajib/tidaknya zakat berdasarkan nisab dan haul.
 
 Saya menyadari sepenuhnya bahwa perangkat lunak ini masih jauh dari kata sempurna. Masih banyak keterbatasan pada tampilan, validasi, dan cakupan aturan fiqh yang mungkin berbeda menurut madzhab atau konteks lokal. Oleh karena itu, saya sangat menghargai **masukan, koreksi, dan saran** yang membangun agar aplikasi ini dapat diperbaiki dan bermanfaat bagi lebih banyak orang. Terima kasih atas perhatian dan partisipasinya.
 
 ---
 
-## Isi Repository
+## Isi Repository🔨
 - `index.html` — Halaman utama (UI) kalkulator zakat.
 - `style.css` — Styling (tema gelap, responsif).
 - `main.js` — Logika perhitungan zakat, fungsi interaksi UI.
@@ -19,7 +19,7 @@ Saya menyadari sepenuhnya bahwa perangkat lunak ini masih jauh dari kata sempurn
 
 ---
 
-## Fitur Utama
+## Fitur Utama📌
 - Menghitung zakat fitrah (per jiwa).
 - Menghitung zakat mal untuk berbagai jenis harta:
   - Emas (gram → konversi ke Rupiah)
@@ -34,7 +34,7 @@ Saya menyadari sepenuhnya bahwa perangkat lunak ini masih jauh dari kata sempurn
 
 ---
 
-## Prinsip Logika yang Digunakan
+## Prinsip Logika yang Digunakan⚠️
 Aplikasi ini sengaja menerapkan konsep Logika Matematika sebagai pengantar implementasi aturan:
 - **Konjungsi (AND)**: Contoh—`(totalHarta >= nisab) AND (haul >= 1)` → wajib zakat.
 - **Disjungsi (OR)**: Menggabungkan beberapa sumber harta dalam perhitungan total.
@@ -45,7 +45,7 @@ Kode JavaScript menggunakan `if/else` dan operator logika (`&&`, `||`, `!`) seba
 
 ---
 
-## Cara Pakai (Quick Start)
+## Cara Pakai (Quick Start)✏️
 1. Buka `index.html` di browser (double-click atau via `Live Server` pada VSCode).
 2. Pilih menu **Zakat Fitrah** atau **Zakat Mal**.
 3. Untuk Zakat Mal:
@@ -61,14 +61,14 @@ Kode JavaScript menggunakan `if/else` dan operator logika (`&&`, `||`, `!`) seba
 
 ---
 
-## Contoh Penggunaan
+## Contoh Penggunaan🤖
 - Jika Anda memiliki **100 gram emas** selama **1 tahun**, dengan asumsi harga emas per gram = Rp 2.321.000:
   - `nilaiEmas = 100 * 2.321.000`
   - Jika total harta >= nisab (85 gram × harga per gram), maka zakat emas = `nilaiEmas × 2.5%`.
 
 ---
 
-## Batasan & Catatan Penting
+## Batasan & Catatan Penting⚠️
 - **Kewajiban Agama**: Aplikasi ini hanya alat bantu perhitungan. Untuk keputusan fiqh dan zakat resmi, selalu rujuk ke ulama atau lembaga zakat setempat.
 - **Harga & Nisab**: Harga emas/perak dan nilai nisab bisa berubah — perbarui konstanta bila diperlukan.
 - **Validasi Input**: Pastikan memasukkan nilai numerik yang benar; beberapa validasi sederhana telah ditambahkan, tetapi tetap berhati-hati.
@@ -76,7 +76,7 @@ Kode JavaScript menggunakan `if/else` dan operator logika (`&&`, `||`, `!`) seba
 
 ---
 
-## Ingin Berkontribusi?
+## Ingin Berkontribusi?👋
 Terima kasih! Kamu bisa:
 1. Fork repository ini.
 2. Buat branch baru (`feature/penyempurnaan`, `fix/validasi-input`, dsb.).
@@ -91,7 +91,7 @@ Beberapa area yang sangat terbuka untuk kontribusi:
 
 ---
 
-## Kontak
+## Kontak📞
 Muhammad Galang Rusdiansyah — *Pembuat proyek*  
 Email: `galangsyah2006@gmail.com`  
 WhatsApp: `089698941254`
