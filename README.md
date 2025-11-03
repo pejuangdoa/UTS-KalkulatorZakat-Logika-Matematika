@@ -99,7 +99,7 @@ GitHub: `github.com/pejuangdoa/UTS-KalkulatorZakat-Logika-Matematika`
 
 ---
 
-## Lisensi
+## Lisensi😎
 Lisensi: **MIT** — Bebas dipakai dan dimodifikasi. Mohon sertakan kredit jika menggunakannya untuk tujuan publik.
 
 ---
