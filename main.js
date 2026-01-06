@@ -269,4 +269,16 @@ function cekMustahikMal(totalZakat) {
           Mustahik terpilih: ${selected.join(", ")}.<br><br>
           <b>Distribusi:</b><br>${hasilHTML}
      `;
+
+
+     // end
+
+     // let persentase = (100 / selected.length).toFixed(2);
+     // let perBagian = (totalZakat / selected.length).toFixed(0);
+
+     // document.getElementById("hasilMustahikMal").innerHTML = `
+     //      Mustahik terpilih: ${selected.join(", ")}.<br>
+     //      Masing-masing mendapat <b>${persentase}%</b> dari total zakat.<br>
+     //      Total per mustahik: <b>Rp ${parseInt(perBagian).toLocaleString()}</b>
+     // `;
 }

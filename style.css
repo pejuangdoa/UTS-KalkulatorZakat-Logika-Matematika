@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 * {
      margin: 0;
      padding: 0;
@@ -169,16 +171,6 @@ footer {
      width: 80%;
 }
 
-.dalil {
-     margin-top: 40px;
-     padding: 20px;
-     border-left: 4px solid #ffd700;
-     background: #161b22;
-     font-style: italic;
-     color: #d1d5db;
-     border-radius: 8px;
-}
-
 .mustahik-box {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -312,4 +304,252 @@ footer {
 
 .warnaangka {
      color: #ffff;
+}
+
+/* DALIL */
+.dalil {
+     margin-top: 40px;
+     padding: 20px;
+     border-left: 4px solid #ffd700;
+     background: #161b22;
+     font-style: italic;
+     color: #d1d5db;
+     border-radius: 8px;
+}
+
+.dalil h3 {
+     text-align: center;
+     font-size: 25px;
+}
+
+
+
+.container-dalil {
+     display: grid;
+     place-items: center;
+     padding: 24px;
+}
+
+.app {
+     width: min(100%, 420px);
+}
+
+/* .header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 14px;
+}
+
+.title {
+     font-size: 1.25rem;
+     font-weight: 700;
+     letter-spacing: .3px;
+}
+
+.badge {
+     font-size: .7rem;
+     color: #ffff;
+     background: linear-gradient(135deg, var(--accent), #9af0d6);
+     padding: 6px 10px;
+     border-radius: 999px;
+     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25);
+} */
+
+.carousel {
+     display: grid;
+     grid-auto-flow: column;
+     grid-auto-columns: 100%;
+     overflow-x: auto;
+     scroll-snap-type: x mandatory;
+     gap: 16px;
+     padding-bottom: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+     height: 6px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+     background: linear-gradient(90deg, var(--accent), var(--accent-2));
+     border-radius: 999px;
+}
+
+.card-zakat {
+     scroll-snap-align: start;
+     background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0)), var(--card);
+     border-radius: var(--radius);
+     box-shadow: var(--shadow);
+     padding: 18px 18px 20px;
+     position: relative;
+     overflow: hidden;
+}
+
+.card-zakat::after {
+     content: "";
+     position: absolute;
+     inset: auto -40% -60% -40%;
+     height: 120px;
+     background: radial-gradient(closest-side, rgba(122, 162, 255, .25), transparent 70%);
+     filter: blur(18px);
+}
+
+.chip {
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+     font-size: .75rem;
+     color: var(--accent);
+     background: rgba(106, 227, 193, .08);
+     border: 1px solid rgba(106, 227, 193, .25);
+     padding: 6px 10px;
+     border-radius: 999px;
+     margin-bottom: 12px;
+}
+
+.card-zakat h3 {
+     margin: 6px 0 8px;
+     font-size: 1.05rem;
+     line-height: 1.3;
+}
+
+.arabic {
+     font-size: 1.15rem;
+     line-height: 1.9;
+     direction: rtl;
+     text-align: right;
+     margin: 10px 0 8px;
+     color: #f2f4fa;
+}
+
+.translation {
+     font-size: .9rem;
+     line-height: 1.6;
+     color: var(--muted);
+}
+
+.keterangan {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: 14px;
+}
+
+.hint {
+     font-size: .8rem;
+     color: var(--muted);
+}
+
+.dots {
+     display: flex;
+     gap: 6px;
+}
+
+.dot {
+     width: 6px;
+     height: 6px;
+     border-radius: 50%;
+     background: #3a4252;
+}
+
+@media (hover: hover) {
+     .card {
+          transition: transform .25s ease, box-shadow .25s ease;
+     }
+
+     .card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 28px 60px rgba(0, 0, 0, .45);
+     }
+}
+
+/* ----------------------------- Tabel kebenaran ---------------------------- */
+.truth-container {
+     margin: 40px auto;
+     max-width: 1100px;
+     background: linear-gradient(145deg, #0f172a, #020617);
+     padding: 25px;
+     border-radius: 16px;
+     box-shadow: 0 15px 40px rgba(0, 0, 0, .6);
+     color: #e5e7eb;
+     font-family: 'Segoe UI', sans-serif;
+}
+
+.truth-container h2 {
+     text-align: center;
+     color: #facc15;
+     margin-bottom: 20px;
+     letter-spacing: .5px;
+}
+
+.truth-table {
+     width: 100%;
+     border-collapse: collapse;
+     overflow: hidden;
+}
+
+.truth-table th {
+     background: #020617;
+     color: #facc15;
+     padding: 14px;
+     font-size: 14px;
+     text-transform: uppercase;
+     border-bottom: 2px solid #1e293b;
+}
+
+.truth-table td {
+     padding: 14px;
+     font-size: 14px;
+     border-bottom: 1px solid #1e293b;
+     vertical-align: top;
+}
+
+.truth-table tr:hover {
+     background: rgba(250, 204, 21, 0.05);
+}
+
+.badge {
+     display: inline-block;
+     padding: 4px 10px;
+     border-radius: 999px;
+     font-size: 12px;
+     font-weight: 600;
+}
+
+.wajib {
+     background: rgba(74, 222, 128, .15);
+     color: #4ade80;
+}
+
+.tidak {
+     background: rgba(248, 113, 113, .15);
+     color: #f87171;
+}
+
+@media (max-width: 768px) {
+     .truth-table thead {
+          display: none;
+     }
+
+     .truth-table tr {
+          display: block;
+          margin-bottom: 15px;
+          border-radius: 12px;
+          background: #020617;
+          padding: 10px;
+     }
+
+     .truth-table td {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          border-bottom: none;
+          font-size: 13px;
+     }
+
+     .truth-table td::before {
+          content: attr(data-label);
+          font-weight: bold;
+          color: #facc15;
+     }
 }
